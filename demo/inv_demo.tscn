@@ -1,0 +1,242 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://demo/inv_demo.gd" id="1_demo"]
+[ext_resource type="Script" path="res://addons/slot_inventory/ui/inv_ui_session.gd" id="2_session"]
+[ext_resource type="Script" path="res://addons/slot_inventory/ui/inv_container_view.gd" id="3_view"]
+[ext_resource type="Script" path="res://addons/slot_inventory/ui/inv_cursor_view.gd" id="4_cursor"]
+[ext_resource type="Theme" path="res://addons/slot_inventory/ui/inv_default_theme.tres" id="5_theme"]
+[ext_resource type="Script" path="res://addons/slot_inventory/ui/inv_hotbar_view.gd" id="6_hotbar"]
+[ext_resource type="Script" path="res://addons/slot_inventory/ui/inv_equipment_view.gd" id="7_equip"]
+[ext_resource type="Script" path="res://addons/slot_inventory/ui/inv_slot_view.gd" id="8_slot"]
+[ext_resource type="Script" path="res://addons/slot_inventory/ui/inv_tooltip_view.gd" id="9_tooltip"]
+[ext_resource type="Resource" path="res://demo/demo_tooltip_provider.tres" id="10_provider"]
+
+[node name="InvDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_theme")
+script = ExtResource("1_demo")
+
+[node name="Session" type="Node" parent="."]
+script = ExtResource("2_session")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.09, 0.09, 0.11, 1)
+
+[node name="Layout" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 36
+alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="Layout"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="InventoryLabel" type="Label" parent="Layout/Left"]
+layout_mode = 2
+text = "Inventory"
+
+[node name="Inventory" type="Container" parent="Layout/Left"]
+layout_mode = 2
+script = ExtResource("3_view")
+group = &"player"
+columns = 5
+
+[node name="Buttons" type="HBoxContainer" parent="Layout/Left"]
+layout_mode = 2
+
+[node name="SortButton" type="Button" parent="Layout/Left/Buttons"]
+layout_mode = 2
+text = "Sort"
+
+[node name="CompactButton" type="Button" parent="Layout/Left/Buttons"]
+layout_mode = 2
+text = "Compact"
+
+[node name="SaveButton" type="Button" parent="Layout/Left/Buttons"]
+layout_mode = 2
+text = "Save"
+
+[node name="LoadButton" type="Button" parent="Layout/Left/Buttons"]
+layout_mode = 2
+text = "Load"
+
+[node name="HotbarLabel" type="Label" parent="Layout/Left"]
+layout_mode = 2
+text = "Hotbar"
+
+[node name="Hotbar" type="Container" parent="Layout/Left"]
+layout_mode = 2
+script = ExtResource("6_hotbar")
+group = &"player"
+columns = 8
+
+[node name="Right" type="VBoxContainer" parent="Layout"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="ChestLabel" type="Label" parent="Layout/Right"]
+layout_mode = 2
+text = "Chest"
+
+[node name="Chest" type="Container" parent="Layout/Right"]
+layout_mode = 2
+script = ExtResource("3_view")
+group = &"external"
+columns = 4
+
+[node name="ToolboxLabel" type="Label" parent="Layout/Right"]
+layout_mode = 2
+text = "Toolbox (tools only, locked row)"
+
+[node name="Toolbox" type="Container" parent="Layout/Right"]
+layout_mode = 2
+script = ExtResource("3_view")
+group = &"external"
+columns = 4
+
+[node name="Doll" type="VBoxContainer" parent="Layout"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="EquipLabel" type="Label" parent="Layout/Doll"]
+layout_mode = 2
+text = "Equipment"
+
+[node name="Equipment" type="Container" parent="Layout/Doll"]
+custom_minimum_size = Vector2(160, 220)
+layout_mode = 2
+script = ExtResource("7_equip")
+group = &"equipment"
+
+[node name="Head" type="Control" parent="Layout/Doll/Equipment"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 0.0
+offset_right = 104.0
+offset_bottom = 48.0
+script = ExtResource("8_slot")
+
+[node name="Body" type="Control" parent="Layout/Doll/Equipment"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 104.0
+offset_bottom = 112.0
+script = ExtResource("8_slot")
+
+[node name="Hand" type="Control" parent="Layout/Doll/Equipment"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 64.0
+offset_right = 48.0
+offset_bottom = 112.0
+script = ExtResource("8_slot")
+
+[node name="Feet" type="Control" parent="Layout/Doll/Equipment"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 128.0
+offset_right = 104.0
+offset_bottom = 176.0
+script = ExtResource("8_slot")
+
+[node name="Market" type="VBoxContainer" parent="Layout"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="GoldLabel" type="Label" parent="Layout/Market"]
+layout_mode = 2
+text = "Gold: 0"
+
+[node name="ShopLabel" type="Label" parent="Layout/Market"]
+layout_mode = 2
+text = "Shop (click 1 · shift 5 · ctrl 10 · hold)"
+
+[node name="Shop" type="Container" parent="Layout/Market"]
+layout_mode = 2
+script = ExtResource("3_view")
+group = &"external"
+columns = 4
+
+[node name="CounterLabel" type="Label" parent="Layout/Market"]
+layout_mode = 2
+text = "Sell counter (paid now, buyback ok)"
+
+[node name="Counter" type="Container" parent="Layout/Market"]
+layout_mode = 2
+script = ExtResource("3_view")
+group = &"external"
+columns = 4
+
+[node name="BinLabel" type="Label" parent="Layout/Market"]
+layout_mode = 2
+text = "Shipping bin (paid on Ship)"
+
+[node name="Bin" type="Container" parent="Layout/Market"]
+layout_mode = 2
+script = ExtResource("3_view")
+group = &"external"
+columns = 4
+
+[node name="ShipButton" type="Button" parent="Layout/Market"]
+layout_mode = 2
+text = "Ship (0g)"
+
+[node name="Help" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+text = "LMB pick up / place / swap  ·  drag to place  ·  RMB half / one  ·  Shift+LMB quick-move  ·  double-click collect  ·  click background to drop  ·  1-8 / wheel: hotbar  ·  E: use active  ·  R: refill can  ·  Esc: toggle externals"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Status" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 8.0
+offset_bottom = 32.0
+grow_horizontal = 2
+mouse_filter = 2
+horizontal_alignment = 1
+
+[node name="Tooltip" type="PanelContainer" parent="."]
+layout_mode = 1
+mouse_filter = 2
+script = ExtResource("9_tooltip")
+provider = ExtResource("10_provider")
+
+[node name="Cursor" type="Control" parent="."]
+layout_mode = 1
+mouse_filter = 2
+script = ExtResource("4_cursor")

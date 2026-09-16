@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://badvp2pbmgaxh"]
+
+[sub_resource type="StandardMaterial3D" id="mat_rock"]
+albedo_color = Color(0.55, 0.55, 0.6, 1)
+roughness = 0.9
+
+[sub_resource type="SphereMesh" id="mesh_rock"]
+material = SubResource("mat_rock")
+height = 0.8
+radial_segments = 12
+rings = 6
+
+[sub_resource type="StandardMaterial3D" id="mat_moss"]
+albedo_color = Color(0.3, 0.55, 0.3, 1)
+
+[sub_resource type="BoxMesh" id="mesh_moss"]
+material = SubResource("mat_moss")
+size = Vector3(0.35, 0.12, 0.3)
+
+[node name="Stone" type="Node3D" unique_id=1020835632]
+
+[node name="Rock" type="MeshInstance3D" parent="." unique_id=664710406]
+transform = Transform3D(1.1, 0, 0, 0, 0.8, 0, 0, 0, 0.9, 0, 0, 0)
+mesh = SubResource("mesh_rock")
+
+[node name="Moss" type="MeshInstance3D" parent="." unique_id=535431495]
+transform = Transform3D(0.96, 0.26, 0, -0.26, 0.96, 0, 0, 0, 1, 0.1, 0.36, 0.05)
+mesh = SubResource("mesh_moss")

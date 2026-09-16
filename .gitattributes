@@ -1,0 +1,11 @@
+# Normalize line endings
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.glb binary
+*.gltf text
+*.tres text
+*.tscn text
+*.gd text
+*.cfg text
+*.md text

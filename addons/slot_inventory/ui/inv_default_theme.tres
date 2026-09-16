@@ -1,0 +1,140 @@
+[gd_resource type="Theme" load_steps=9 format=3]
+
+[sub_resource type="StyleBoxFlat" id="slot_normal"]
+bg_color = Color(0.16, 0.16, 0.19, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.32, 0.32, 0.38, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="slot_hover"]
+bg_color = Color(0.21, 0.21, 0.25, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.58, 0.58, 0.66, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="slot_focus"]
+bg_color = Color(0.21, 0.21, 0.25, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.85, 0.45, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="slot_accept"]
+bg_color = Color(0.18, 0.3, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.9, 0.45, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="slot_reject"]
+bg_color = Color(0.32, 0.17, 0.17, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.35, 0.35, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="slot_glow"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.45, 0.75, 1, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="slot_selected"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.92, 0.55, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="tooltip_panel"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.08, 0.08, 0.1, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.5, 0.58, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[resource]
+InvCursorView/colors/count_color = Color(1, 1, 1, 1)
+InvCursorView/colors/count_shadow = Color(0, 0, 0, 0.85)
+InvCursorView/constants/count_margin = 2
+InvCursorView/font_sizes/count_font_size = 13
+InvTooltipView/colors/accent_color = Color(1, 0.9, 0.55, 1)
+InvTooltipView/colors/body_color = Color(0.92, 0.92, 0.94, 1)
+InvTooltipView/colors/muted_color = Color(0.68, 0.68, 0.74, 1)
+InvTooltipView/colors/negative_color = Color(0.95, 0.45, 0.45, 1)
+InvTooltipView/colors/positive_color = Color(0.55, 0.9, 0.55, 1)
+InvTooltipView/colors/title_color = Color(1, 0.95, 0.8, 1)
+InvTooltipView/constants/max_width = 260
+InvTooltipView/constants/slot_gap = 6
+InvTooltipView/font_sizes/body_font_size = 13
+InvTooltipView/font_sizes/muted_font_size = 11
+InvTooltipView/font_sizes/title_font_size = 15
+InvTooltipView/styles/panel = SubResource("tooltip_panel")
+InvSlotView/colors/bar_bg = Color(0, 0, 0, 0.6)
+InvSlotView/colors/caption_color = Color(1, 0.9, 0.55, 1)
+InvSlotView/colors/caption_shadow = Color(0, 0, 0, 0.85)
+InvSlotView/colors/bar_fg = Color(0.35, 0.85, 0.35, 1)
+InvSlotView/colors/count_color = Color(1, 1, 1, 1)
+InvSlotView/colors/count_shadow = Color(0, 0, 0, 0.85)
+InvSlotView/colors/icon_modulate = Color(1, 1, 1, 1)
+InvSlotView/constants/bar_height = 3
+InvSlotView/constants/caption_margin = 2
+InvSlotView/constants/count_margin = 3
+InvSlotView/constants/count_shadow_offset = 1
+InvSlotView/constants/icon_margin = 6
+InvSlotView/font_sizes/caption_font_size = 10
+InvSlotView/font_sizes/count_font_size = 13
+InvSlotView/styles/accept = SubResource("slot_accept")
+InvSlotView/styles/focus = SubResource("slot_focus")
+InvSlotView/styles/glow = SubResource("slot_glow")
+InvSlotView/styles/hover = SubResource("slot_hover")
+InvSlotView/styles/normal = SubResource("slot_normal")
+InvSlotView/styles/reject = SubResource("slot_reject")
+InvSlotView/styles/selected = SubResource("slot_selected")

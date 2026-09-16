@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="InvTooltipProvider" load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://addons/slot_inventory/ui/inv_tooltip_provider.gd" id="1_provider"]
+[ext_resource type="Script" path="res://addons/slot_inventory/ui/inv_tooltip_field.gd" id="2_field"]
+
+[sub_resource type="Resource" id="f_name"]
+script = ExtResource("2_field")
+kind = 0
+label = ""
+format = ""
+style = &"title"
+hide_if_empty = true
+only_with_policy = ""
+
+[sub_resource type="Resource" id="f_desc"]
+script = ExtResource("2_field")
+kind = 1
+label = ""
+format = ""
+style = &"muted"
+hide_if_empty = true
+only_with_policy = ""
+
+[sub_resource type="Resource" id="f_stack"]
+script = ExtResource("2_field")
+kind = 3
+label = "Stack: "
+format = ""
+style = &"body"
+hide_if_empty = true
+only_with_policy = ""
+
+[sub_resource type="Resource" id="f_components"]
+script = ExtResource("2_field")
+kind = 9
+label = ""
+format = ""
+style = &"body"
+hide_if_empty = true
+only_with_policy = ""
+
+[sub_resource type="Resource" id="f_policy"]
+script = ExtResource("2_field")
+kind = 10
+label = ""
+format = ""
+style = &"accent"
+hide_if_empty = true
+only_with_policy = ""
+
+[sub_resource type="Resource" id="f_sep"]
+script = ExtResource("2_field")
+kind = 11
+label = ""
+format = ""
+style = &"body"
+hide_if_empty = true
+only_with_policy = ""
+
+[sub_resource type="Resource" id="f_sell"]
+script = ExtResource("2_field")
+kind = 7
+label = "Sells for "
+format = ""
+style = &"accent"
+hide_if_empty = true
+only_with_policy = ""
+
+[sub_resource type="Resource" id="f_equip"]
+script = ExtResource("2_field")
+kind = 5
+label = "Equip: "
+format = ""
+style = &"muted"
+hide_if_empty = true
+only_with_policy = ""
+
+[sub_resource type="Resource" id="f_tags"]
+script = ExtResource("2_field")
+kind = 4
+label = ""
+format = ""
+style = &"muted"
+hide_if_empty = true
+only_with_policy = ""
+
+[resource]
+script = ExtResource("1_provider")
+fields = [SubResource("f_name"), SubResource("f_desc"), SubResource("f_stack"), SubResource("f_components"), SubResource("f_policy"), SubResource("f_sep"), SubResource("f_sell"), SubResource("f_equip"), SubResource("f_tags")]
+collapse_separators = true

@@ -1,0 +1,16 @@
+# Godot
+.godot/
+*.import.tmp
+export_presets.cfg
+.import/
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Not part of the published addon
+addons/godot_ai/
+demo/_icon_preview.png
